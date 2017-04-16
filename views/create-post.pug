@@ -1,0 +1,8 @@
+extends ./layout
+
+block body
+  form(method="POST" action="/post-completed")
+    .form-group
+      label(for="post-title") Title
+      input.form-control(type="text" name="post-title")
+      textarea.form-control(rows="10" required)
