@@ -32,7 +32,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     classMethods: {
-      associate: function(/*models*/) {
+      associate: function(models) {
+        User.hasMany(models.Blog)
       }
     },
     validate: {

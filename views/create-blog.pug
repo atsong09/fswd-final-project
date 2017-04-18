@@ -1,0 +1,16 @@
+extends ./layout
+
+block body
+  form(method="POST" action="/create-blog")
+    .form-group
+      label(for="title") Title
+      input.form-control(type="text" name="title")
+      label(for="topic")
+      select.form-control(name="topic")
+        option Television
+        option Film
+        option Literature
+        option Sports
+      label(for="content")
+      textarea.form-control(rows="20" name="content" required)
+      button.btn.btn-success(type="submit") Publish
