@@ -1,7 +1,45 @@
 extends ./layout
 
 block body
-  if user
-    | Hello #{user.username}!
-  else
-    | Hello world!
+  .row(ng-view)
+    div.col-md-8 
+      h1 Latest Posts
+      .article
+        h2 
+          a(href="#") {{vm.Blog.blogId[1]}}
+        .row
+          .group1.col-sm-6.col-md-6
+            span.glyphicon.glyphicon-folder-open(display="inline-block")
+              a(href="#") Test
+              span.glyphicon.glyphicon-bookmark
+                a(href="#") Bookmark
+          .group2.col-sm-6.col-md-6
+            span.glyphicon.glyphicon-pencil
+              a(href="#") Comments
+                span.glyphicon.glyphicon-time Time
+        hr    
+        p.lead Test
+        p Test
+        p.text-right
+          a.text-right(href="#") continue reading...
+      
+      ul.pager
+        li.previous
+          a(href="#") Older
+        li.next
+          a(href="#") Newer
+    
+    div.col-md-4
+      .well.text-center
+        p.lead Test
+        button.btn.btn-primary.btn-lg Subscribe to my feed!
+      .panel.panel-default
+        .panel-heading
+          h4 Latest Posts
+        ul.list-group
+          each entry in ["title1", "title2", "title3", "title4"]
+            li.list-group-item= entry
+    footer
+      .container
+        hr
+        p.text-center Copyright @ Song 2017
